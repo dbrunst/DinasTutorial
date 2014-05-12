@@ -1,4 +1,5 @@
 #import "MoMARootViewController.h"
+#import "HelloWorldViewController.h"
 
 @interface MoMARootViewController ()
 @property (strong, nonatomic) UIButton *myButton;
@@ -18,7 +19,8 @@
 }
 
 - (void)myButtonWasTapped {
-    
+    HelloWorldViewController *viewController = [[HelloWorldViewController alloc] init];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 @end

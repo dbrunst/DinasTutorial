@@ -24,7 +24,153 @@
 		AE5C90BC19214C3A009059B1 /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C90BB19214C3A009059B1 /* Cedar-iOS.framework */; };
 		AE5C90C219214E52009059B1 /* MoMAAppDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE5C90C119214E52009059B1 /* MoMAAppDelegateSpec.mm */; };
 		AE5C90C4192151D0009059B1 /* MoMARootViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE5C90C3192151D0009059B1 /* MoMARootViewControllerSpec.mm */; };
+		AE5C960E19215C32009059B1 /* libFoundation+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C95E719215A86009059B1 /* libFoundation+PivotalSpecHelper-StaticLib.a */; };
+		AE5C960F19215C32009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C960119215C01009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */; };
+		AE5C961019215C32009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C960319215C01009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE5C95CA19215A84009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE384900168CD8C800C99B55;
+			remoteInfo = "CoreLocation+PivotalSpecHelper";
+		};
+		AE5C95CC19215A84009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE384918168CD8D800C99B55;
+			remoteInfo = CoreLocationSpec;
+		};
+		AE5C95CE19215A84009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE38498E168D053300C99B55;
+			remoteInfo = "CoreLocation+PivotalSpecHelper-StaticLib";
+		};
+		AE5C95D019215A84009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE3848D5168CD86000C99B55;
+			remoteInfo = "CoreLocation-StaticLibSpec";
+		};
+		AE5C95D219215A84009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE118AE418D6BC2F00C90D6B;
+			remoteInfo = "CoreLocation-StaticLibSpecBundle";
+		};
+		AE5C95E019215A86009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEA96B49168B506500861DF1;
+			remoteInfo = "Foundation+PivotalCore";
+		};
+		AE5C95E219215A86009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEA96C54168B636E00861DF1;
+			remoteInfo = "Foundation+PivotalCore-StaticLib";
+		};
+		AE5C95E419215A86009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEA96B9E168B541900861DF1;
+			remoteInfo = "Foundation+PivotalSpecHelper";
+		};
+		AE5C95E619215A86009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEA96C64168B63BD00861DF1;
+			remoteInfo = "Foundation+PivotalSpecHelper-StaticLib";
+		};
+		AE5C95E819215A86009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEA96BD3168B561500861DF1;
+			remoteInfo = FoundationSpec;
+		};
+		AE5C95EA19215A86009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEA96C74168B640B00861DF1;
+			remoteInfo = "Foundation-StaticLibSpec";
+		};
+		AE5C95EC19215A86009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE2A04B018D3E6AA00D4FD96;
+			remoteInfo = "Foundation-StaticLibSpecBundle";
+		};
+		AE5C95FE19215C01009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBCCC24168B999F0056EE83;
+			remoteInfo = "UIKit+PivotalCore-StaticLib";
+		};
+		AE5C960019215C01009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBCCC64168B9AF10056EE83;
+			remoteInfo = "UIKit+PivotalSpecHelper-StaticLib";
+		};
+		AE5C960219215C01009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEC40C89174C203700474D2D;
+			remoteInfo = "UIKit+PivotalSpecHelperStubs-StaticLib";
+		};
+		AE5C960419215C01009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBCCC34168B99ED0056EE83;
+			remoteInfo = "UIKit-StaticLibSpec";
+		};
+		AE5C960619215C01009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE118AA218D6B57000C90D6B;
+			remoteInfo = "UIKit-StaticLibSpecBundle";
+		};
+		AE5C960819215C16009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEBCCC63168B9AF10056EE83;
+			remoteInfo = "UIKit+PivotalSpecHelper-StaticLib";
+		};
+		AE5C960A19215C16009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEC40C88174C203700474D2D;
+			remoteInfo = "UIKit+PivotalSpecHelperStubs-StaticLib";
+		};
+		AE5C960C19215C16009059B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEA96C63168B63BD00861DF1;
+			remoteInfo = "Foundation+PivotalSpecHelper-StaticLib";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AE1410A119210DBC001056E0 /* DinasTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinasTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +198,11 @@
 		AE5C90BD19214C3A009059B1 /* specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "specs-Prefix.pch"; sourceTree = "<group>"; };
 		AE5C90C119214E52009059B1 /* MoMAAppDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MoMAAppDelegateSpec.mm; sourceTree = "<group>"; };
 		AE5C90C3192151D0009059B1 /* MoMARootViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MoMARootViewControllerSpec.mm; sourceTree = "<group>"; };
+		AE5C956819215884009059B1 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
+		AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreLocation.xcodeproj; path = CoreLocation/CoreLocation.xcodeproj; sourceTree = "<group>"; };
+		AE5C95EF19215BCA009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUIKit+PivotalSpecHelper-StaticLib.a"; path = "Externals/PivotalCoreKit/UIKit/build/Debug-iphoneos/libUIKit+PivotalSpecHelper-StaticLib.a"; sourceTree = "<group>"; };
+		AE5C95F019215BCA009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUIKit+PivotalSpecHelperStubs-StaticLib.a"; path = "Externals/PivotalCoreKit/UIKit/build/Debug-iphoneos/libUIKit+PivotalSpecHelperStubs-StaticLib.a"; sourceTree = "<group>"; };
+		AE5C95F319215C01009059B1 /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = UIKit/UIKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +220,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE5C960E19215C32009059B1 /* libFoundation+PivotalSpecHelper-StaticLib.a in Frameworks */,
+				AE5C960F19215C32009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */,
+				AE5C961019215C32009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a in Frameworks */,
 				AE5C90AF19214C39009059B1 /* CoreGraphics.framework in Frameworks */,
 				AE5C90B019214C39009059B1 /* UIKit.framework in Frameworks */,
 				AE5C90BC19214C3A009059B1 /* Cedar-iOS.framework in Frameworks */,
@@ -83,6 +237,7 @@
 		AE14109819210DBC001056E0 = {
 			isa = PBXGroup;
 			children = (
+				AE5C956719215848009059B1 /* Externals */,
 				AE1410AA19210DBC001056E0 /* DinasTutorial */,
 				AE5C90B219214C39009059B1 /* specs */,
 				AE1410A319210DBC001056E0 /* Frameworks */,
@@ -102,6 +257,8 @@
 		AE1410A319210DBC001056E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE5C95EF19215BCA009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */,
+				AE5C95F019215BCA009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */,
 				AE1410A419210DBC001056E0 /* Foundation.framework */,
 				AE1410A619210DBC001056E0 /* CoreGraphics.framework */,
 				AE1410A819210DBC001056E0 /* UIKit.framework */,
@@ -159,6 +316,62 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AE5C956719215848009059B1 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AE5C95C119215A5C009059B1 /* PivotalCoreKit */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		AE5C95C119215A5C009059B1 /* PivotalCoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE5C95F319215C01009059B1 /* UIKit.xcodeproj */,
+				AE5C956819215884009059B1 /* Foundation.xcodeproj */,
+				AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */,
+			);
+			path = PivotalCoreKit;
+			sourceTree = "<group>";
+		};
+		AE5C95C319215A84009059B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE5C95CB19215A84009059B1 /* CoreLocation+PivotalSpecHelper.framework */,
+				AE5C95CD19215A84009059B1 /* CoreLocationSpec */,
+				AE5C95CF19215A84009059B1 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */,
+				AE5C95D119215A84009059B1 /* CoreLocation-StaticLibSpec.app */,
+				AE5C95D319215A84009059B1 /* CoreLocation-StaticLibSpecBundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE5C95D619215A86009059B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE5C95E119215A86009059B1 /* Foundation+PivotalCore.framework */,
+				AE5C95E319215A86009059B1 /* libFoundation+PivotalCore-StaticLib.a */,
+				AE5C95E519215A86009059B1 /* Foundation+PivotalSpecHelper.framework */,
+				AE5C95E719215A86009059B1 /* libFoundation+PivotalSpecHelper-StaticLib.a */,
+				AE5C95E919215A86009059B1 /* FoundationSpec */,
+				AE5C95EB19215A86009059B1 /* Foundation-StaticLibSpec.app */,
+				AE5C95ED19215A86009059B1 /* Foundation-StaticLibSpecBundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE5C95F419215C01009059B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE5C95FF19215C01009059B1 /* libUIKit+PivotalCore-StaticLib.a */,
+				AE5C960119215C01009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */,
+				AE5C960319215C01009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */,
+				AE5C960519215C01009059B1 /* UIKit-StaticLibSpec.app */,
+				AE5C960719215C01009059B1 /* UIKit-StaticLibSpecBundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,6 +404,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE5C960919215C16009059B1 /* PBXTargetDependency */,
+				AE5C960B19215C16009059B1 /* PBXTargetDependency */,
+				AE5C960D19215C16009059B1 /* PBXTargetDependency */,
 			);
 			name = specs;
 			productName = specs;
@@ -217,6 +433,20 @@
 			mainGroup = AE14109819210DBC001056E0;
 			productRefGroup = AE1410A219210DBC001056E0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AE5C95C319215A84009059B1 /* Products */;
+					ProjectRef = AE5C95831921589F009059B1 /* CoreLocation.xcodeproj */;
+				},
+				{
+					ProductGroup = AE5C95D619215A86009059B1 /* Products */;
+					ProjectRef = AE5C956819215884009059B1 /* Foundation.xcodeproj */;
+				},
+				{
+					ProductGroup = AE5C95F419215C01009059B1 /* Products */;
+					ProjectRef = AE5C95F319215C01009059B1 /* UIKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AE1410A019210DBC001056E0 /* DinasTutorial */,
@@ -224,6 +454,128 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AE5C95CB19215A84009059B1 /* CoreLocation+PivotalSpecHelper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "CoreLocation+PivotalSpecHelper.framework";
+			remoteRef = AE5C95CA19215A84009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95CD19215A84009059B1 /* CoreLocationSpec */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = CoreLocationSpec;
+			remoteRef = AE5C95CC19215A84009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95CF19215A84009059B1 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCoreLocation+PivotalSpecHelper-StaticLib.a";
+			remoteRef = AE5C95CE19215A84009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95D119215A84009059B1 /* CoreLocation-StaticLibSpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "CoreLocation-StaticLibSpec.app";
+			remoteRef = AE5C95D019215A84009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95D319215A84009059B1 /* CoreLocation-StaticLibSpecBundle.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CoreLocation-StaticLibSpecBundle.octest";
+			remoteRef = AE5C95D219215A84009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95E119215A86009059B1 /* Foundation+PivotalCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "Foundation+PivotalCore.framework";
+			remoteRef = AE5C95E019215A86009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95E319215A86009059B1 /* libFoundation+PivotalCore-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFoundation+PivotalCore-StaticLib.a";
+			remoteRef = AE5C95E219215A86009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95E519215A86009059B1 /* Foundation+PivotalSpecHelper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "Foundation+PivotalSpecHelper.framework";
+			remoteRef = AE5C95E419215A86009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95E719215A86009059B1 /* libFoundation+PivotalSpecHelper-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFoundation+PivotalSpecHelper-StaticLib.a";
+			remoteRef = AE5C95E619215A86009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95E919215A86009059B1 /* FoundationSpec */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = FoundationSpec;
+			remoteRef = AE5C95E819215A86009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95EB19215A86009059B1 /* Foundation-StaticLibSpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Foundation-StaticLibSpec.app";
+			remoteRef = AE5C95EA19215A86009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95ED19215A86009059B1 /* Foundation-StaticLibSpecBundle.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Foundation-StaticLibSpecBundle.octest";
+			remoteRef = AE5C95EC19215A86009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C95FF19215C01009059B1 /* libUIKit+PivotalCore-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libUIKit+PivotalCore-StaticLib.a";
+			remoteRef = AE5C95FE19215C01009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C960119215C01009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libUIKit+PivotalSpecHelper-StaticLib.a";
+			remoteRef = AE5C960019215C01009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C960319215C01009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libUIKit+PivotalSpecHelperStubs-StaticLib.a";
+			remoteRef = AE5C960219215C01009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C960519215C01009059B1 /* UIKit-StaticLibSpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "UIKit-StaticLibSpec.app";
+			remoteRef = AE5C960419215C01009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5C960719215C01009059B1 /* UIKit-StaticLibSpecBundle.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "UIKit-StaticLibSpecBundle.octest";
+			remoteRef = AE5C960619215C01009059B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AE14109F19210DBC001056E0 /* Resources */ = {
@@ -283,6 +635,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE5C960919215C16009059B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "UIKit+PivotalSpecHelper-StaticLib";
+			targetProxy = AE5C960819215C16009059B1 /* PBXContainerItemProxy */;
+		};
+		AE5C960B19215C16009059B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "UIKit+PivotalSpecHelperStubs-StaticLib";
+			targetProxy = AE5C960A19215C16009059B1 /* PBXContainerItemProxy */;
+		};
+		AE5C960D19215C16009059B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Foundation+PivotalSpecHelper-StaticLib";
+			targetProxy = AE5C960C19215C16009059B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE1410AD19210DBC001056E0 /* InfoPlist.strings */ = {
@@ -413,6 +783,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/specs/Frameworks",
+					"$(SRCROOT)/Externals/PivotalCoreKit/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "specs/specs-Prefix.pch";
@@ -421,8 +792,17 @@
 					"$(inherited)",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Externals/PivotalCoreKit/**",
+				);
 				INFOPLIST_FILE = "specs/specs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/PivotalCoreKit/UIKit/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -443,12 +823,22 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/specs/Frameworks",
+					"$(SRCROOT)/Externals/PivotalCoreKit/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "specs/specs-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Externals/PivotalCoreKit/**",
+				);
 				INFOPLIST_FILE = "specs/specs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/PivotalCoreKit/UIKit/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -488,6 +878,7 @@
 				AE5C90C019214C3A009059B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
