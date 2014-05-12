@@ -1,0 +1,129 @@
+require 'pathname'
+require 'tmpdir'
+
+module CedarTargetspecs
+  UI_SPECS_TARGET_NAME = "specs"
+  CONFIGURATION = "Release"
+
+  PROJECT_ROOT = Pathname.new(File.dirname(__FILE__)).parent.to_s
+  BUILD_DIR = File.join(PROJECT_ROOT, "build")
+
+  class << self
+    def in_project_dir
+      original_dir = Dir.pwd
+      Dir.chdir(PROJECT_ROOT)
+
+      yield
+
+      ensure
+      Dir.chdir(original_dir)
+    end
+
+    def deployment_target_sdk_version
+      in_project_dir do
+        `xcodebuild -showBuildSettings -target #{UI_SPECS_TARGET_NAME} | grep IPHONEOS_DEPLOYMENT_TARGET | awk '{print $3 }'`.strip
+      end
+    end
+
+    def deployment_target_sdk_dir
+      @sdk_dir ||= %x[ xcrun -sdk iphonesimulator#{deployment_target_sdk_version} -show-sdk-path ].strip
+    end
+
+    # Xcode 4.3 stores its /Developer inside /Applications/Xcode.app, Xcode 4.2 stored it in /Developer
+    def xcode_developer_dir
+      `xcode-select -print-path`.strip
+    end
+
+    def build_dir(effective_platform_name)
+      File.join(BUILD_DIR, CONFIGURATION + effective_platform_name)
+    end
+
+    def is_run_unit_tests_deprecated?
+      system("cat #{xcode_developer_dir}/Tools/RunUnitTests | grep -q 'RunUnitTests is obsolete.'")
+    end
+
+    def system_or_exit(cmd, stdout = nil)
+      puts "Executing #{cmd}"
+      cmd += " >#{stdout}" if stdout
+      system(cmd) or raise "******** Build failed ********"
+    end
+
+    def run_cmd_and_grep_for_failure(cmd)
+      puts "Executing #{cmd}"
+      puts result = %x[#{cmd} 2>&1]
+      if result.index(/Test Case.*failed/)
+        exit(1)
+      else
+        exit(0)
+      end
+    end 
+
+    def with_env_vars(env_vars)
+      old_values = {}
+      env_vars.each do |key,new_value|
+        old_values[key] = ENV[key]
+        ENV[key] = new_value
+      end
+
+      yield
+
+      env_vars.each_key do |key|
+        ENV[key] = old_values[key]
+      end
+    end
+
+    def output_file(target)
+      output_dir = if ENV['IS_CI_BOX']
+        ENV['CC_BUILD_ARTIFACTS']
+      else
+        Dir.mkdir(BUILD_DIR) unless File.exists?(BUILD_DIR)
+        BUILD_DIR
+      end
+
+      output_file = File.join(output_dir, "#{target}.output")
+      puts "Output: #{output_file}"
+      output_file
+    end
+
+    def kill_simulator
+      system %Q[killall -m -KILL "gdb"]
+      system %Q[killall -m -KILL "otest"]
+      system %Q[killall -m -KILL "iPhone Simulator"]
+    end
+  end
+end
+
+desc "Clean build directory"
+task :clean_specs do
+  CedarTargetspecs.system_or_exit "rm -rf #{CedarTargetspecs::BUILD_DIR}/*", CedarTargetspecs.output_file("clean")
+end
+
+desc "Build specs OCUnit application specs"
+task :build_specs => :clean_specs do
+  CedarTargetspecs.kill_simulator
+  CedarTargetspecs.system_or_exit "pushd #{CedarTargetspecs::PROJECT_ROOT} && xcodebuild -target DinasTutorial -configuration #{CedarTargetspecs::CONFIGURATION} -sdk iphonesimulator#{CedarTargetspecs.deployment_target_sdk_version} clean build ARCHS=i386 TEST_AFTER_BUILD=NO GCC_SYMBOLS_PRIVATE_EXTERN=NO SYMROOT='#{CedarTargetspecs::BUILD_DIR}' && popd", CedarTargetspecs.output_file("specs-AppBuild")
+  CedarTargetspecs.system_or_exit "pushd #{CedarTargetspecs::PROJECT_ROOT} && xcodebuild -target #{CedarTargetspecs::UI_SPECS_TARGET_NAME} -configuration #{CedarTargetspecs::CONFIGURATION} -sdk iphonesimulator#{CedarTargetspecs.deployment_target_sdk_version} build ARCHS=i386 GCC_SYMBOLS_PRIVATE_EXTERN=NO TEST_AFTER_BUILD=NO SYMROOT='#{CedarTargetspecs::BUILD_DIR}' && popd", CedarTargetspecs.output_file("specs-SpecBuild")
+end
+
+desc "Run specs OCUnit application specs"
+task :specs => :build_specs do
+  if CedarTargetspecs.is_run_unit_tests_deprecated?
+    CedarTargetspecs.run_cmd_and_grep_for_failure "pushd #{CedarTargetspecs::PROJECT_ROOT} && xcodebuild test -scheme DinasTutorial -configuration #{CedarTargetspecs::CONFIGURATION} -destination 'OS=#{CedarTargetspecs.deployment_target_sdk_version},name=iPhone Retina (3.5-inch)' ARCHS=i386 SYMROOT='#{CedarTargetspecs::BUILD_DIR}' && popd"
+  else
+    env_vars = {
+      "DYLD_ROOT_PATH" => CedarTargetspecs.deployment_target_sdk_dir,
+      "DYLD_INSERT_LIBRARIES" => "#{CedarTargetspecs.xcode_developer_dir}/Library/PrivateFrameworks/IDEBundleInjection.framework/IDEBundleInjection",
+      "DYLD_FALLBACK_LIBRARY_PATH" => CedarTargetspecs.deployment_target_sdk_dir,
+      "XCInjectBundle" => "#{File.join(CedarTargetspecs.build_dir("-iphonesimulator"), "#{CedarTargetspecs::UI_SPECS_TARGET_NAME}.octest")}",
+      "XCInjectBundleInto" => "#{File.join(CedarTargetspecs.build_dir("-iphonesimulator"), "DinasTutorial.app/DinasTutorial")}",
+      "IPHONE_SIMULATOR_ROOT" => CedarTargetspecs.deployment_target_sdk_dir,
+      "CFFIXED_USER_HOME" => Dir.tmpdir,
+      "CEDAR_HEADLESS_SPECS" => "1",
+      "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
+    }
+
+    CedarTargetspecs.with_env_vars(env_vars) do
+      CedarTargetspecs.run_cmd_and_grep_for_failure "#{File.join(CedarTargetspecs.build_dir("-iphonesimulator"), "DinasTutorial.app/DinasTutorial")} -RegisterForSystemEvents -SenTest All"
+    end
+  end
+end
