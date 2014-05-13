@@ -1,5 +1,11 @@
 #import <UIKit/UIKit.h>
 
-@interface HelloWorldViewController : UIViewController
+@protocol HelloWorldViewControllerDelegate <NSObject>
 
+- (void)helloWorldViewControllerDidFinish;
+
+@end
+
+@interface HelloWorldViewController : UIViewController
+@property (weak, nonatomic) id<HelloWorldViewControllerDelegate> delegate;
 @end

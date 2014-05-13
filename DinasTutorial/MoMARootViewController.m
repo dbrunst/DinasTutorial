@@ -20,7 +20,12 @@
 
 - (void)myButtonWasTapped {
     HelloWorldViewController *viewController = [[HelloWorldViewController alloc] init];
+    viewController.delegate = self;
     [self presentViewController:viewController animated:YES completion:nil];
+}
+
+- (void)helloWorldViewControllerDidFinish {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

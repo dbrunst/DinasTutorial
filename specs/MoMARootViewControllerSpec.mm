@@ -32,6 +32,24 @@ describe(@"MoMARootViewController", ^{
         it(@"should open up a HelloWorldViewController", ^{
             controller.presentedViewController should be_instance_of([HelloWorldViewController class]);
         });
+        
+        it(@"should have the correct delegate", ^{
+            ((HelloWorldViewController *)controller.presentedViewController).delegate should be_same_instance_as(controller);
+        });
+    });
+    
+    describe(@"HelloWorldViewControllerDelegate protocol", ^{
+        describe(@"helloWorldViewControllerDidFinish", ^{
+            beforeEach(^{
+                UIViewController *controllerB = [[UIViewController alloc] init];
+                [controller presentViewController:controllerB animated:NO completion:nil];
+                [controller helloWorldViewControllerDidFinish];
+            });
+            
+            it(@"should dismiss the presentedViewController", ^{
+                controller.presentedViewController should be_nil;
+            });
+        });
     });
 });
 

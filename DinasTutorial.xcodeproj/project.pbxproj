@@ -27,6 +27,7 @@
 		AE5C960E19215C32009059B1 /* libFoundation+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C95E719215A86009059B1 /* libFoundation+PivotalSpecHelper-StaticLib.a */; };
 		AE5C960F19215C32009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C960119215C01009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */; };
 		AE5C961019215C32009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C960319215C01009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */; };
+		AE5C962C19225079009059B1 /* HelloWorldViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE5C962B19225079009059B1 /* HelloWorldViewControllerSpec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		AE5C95EF19215BCA009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUIKit+PivotalSpecHelper-StaticLib.a"; path = "Externals/PivotalCoreKit/UIKit/build/Debug-iphoneos/libUIKit+PivotalSpecHelper-StaticLib.a"; sourceTree = "<group>"; };
 		AE5C95F019215BCA009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUIKit+PivotalSpecHelperStubs-StaticLib.a"; path = "Externals/PivotalCoreKit/UIKit/build/Debug-iphoneos/libUIKit+PivotalSpecHelperStubs-StaticLib.a"; sourceTree = "<group>"; };
 		AE5C95F319215C01009059B1 /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = UIKit/UIKit.xcodeproj; sourceTree = "<group>"; };
+		AE5C962B19225079009059B1 /* HelloWorldViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldViewControllerSpec.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				AE5C90B319214C39009059B1 /* Supporting Files */,
 				AE5C90C119214E52009059B1 /* MoMAAppDelegateSpec.mm */,
 				AE5C90C3192151D0009059B1 /* MoMARootViewControllerSpec.mm */,
+				AE5C962B19225079009059B1 /* HelloWorldViewControllerSpec.mm */,
 			);
 			path = specs;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE5C90C219214E52009059B1 /* MoMAAppDelegateSpec.mm in Sources */,
+				AE5C962C19225079009059B1 /* HelloWorldViewControllerSpec.mm in Sources */,
 				AE5C90C4192151D0009059B1 /* MoMARootViewControllerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
