@@ -28,6 +28,7 @@
 		AE5C960F19215C32009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C960119215C01009059B1 /* libUIKit+PivotalSpecHelper-StaticLib.a */; };
 		AE5C961019215C32009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C960319215C01009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */; };
 		AE5C962C19225079009059B1 /* HelloWorldViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE5C962B19225079009059B1 /* HelloWorldViewControllerSpec.mm */; };
+		D120D4A21923AD0E006E5C18 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D120D4A11923AD0E006E5C18 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +206,8 @@
 		AE5C95F019215BCA009059B1 /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUIKit+PivotalSpecHelperStubs-StaticLib.a"; path = "Externals/PivotalCoreKit/UIKit/build/Debug-iphoneos/libUIKit+PivotalSpecHelperStubs-StaticLib.a"; sourceTree = "<group>"; };
 		AE5C95F319215C01009059B1 /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = UIKit/UIKit.xcodeproj; sourceTree = "<group>"; };
 		AE5C962B19225079009059B1 /* HelloWorldViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldViewControllerSpec.mm; sourceTree = "<group>"; };
+		D120D4A01923AD0E006E5C18 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		D120D4A11923AD0E006E5C18 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,8 @@
 		AE1410AA19210DBC001056E0 /* DinasTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				D120D4A01923AD0E006E5C18 /* TableViewController.h */,
+				D120D4A11923AD0E006E5C18 /* TableViewController.m */,
 				AE1410B319210DBC001056E0 /* MoMAAppDelegate.h */,
 				AE1410B419210DBC001056E0 /* MoMAAppDelegate.m */,
 				AE1410B619210DBC001056E0 /* Images.xcassets */,
@@ -624,6 +629,7 @@
 				AE1410D819212A6E001056E0 /* HelloWorldViewController.m in Sources */,
 				AE1410D519211EC1001056E0 /* MoMARootViewController.m in Sources */,
 				AE1410B519210DBC001056E0 /* MoMAAppDelegate.m in Sources */,
+				D120D4A21923AD0E006E5C18 /* TableViewController.m in Sources */,
 				AE1410B119210DBC001056E0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

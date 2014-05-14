@@ -1,11 +1,13 @@
 #import "MoMARootViewController.h"
 #import "HelloWorldViewController.h"
+#import "TableViewController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
 @interface MoMARootViewController (Spec)
 @property (strong, nonatomic) UIButton *myButton;
+@property (strong, nonatomic) UIButton *tableViewButton;
 @end
 
 SPEC_BEGIN(MoMARootViewControllerSpec)
@@ -29,12 +31,22 @@ describe(@"MoMARootViewController", ^{
             [controller.myButton tap];
         });
         
-        it(@"should open up a HelloWorldViewController", ^{
+        it(@"should open a HelloWorldViewController", ^{
             controller.presentedViewController should be_instance_of([HelloWorldViewController class]);
         });
         
         it(@"should have the correct delegate", ^{
             ((HelloWorldViewController *)controller.presentedViewController).delegate should be_same_instance_as(controller);
+        });
+    });
+
+    describe(@"Tapping tableViewButton", ^{
+        beforeEach(^{
+            [controller.tableViewButton tap];
+        });
+
+        it(@"should open a TableViewController", ^{
+            controller.presentedViewController should be_instance_of([TableViewController class]);
         });
     });
     
