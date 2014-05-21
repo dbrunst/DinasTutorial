@@ -5,5 +5,7 @@
 @end
 
 @implementation TableViewController
-
+- (void)loadView {
+    [super loadView];
+}
 @end

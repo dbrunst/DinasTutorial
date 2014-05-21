@@ -1,5 +1,6 @@
 #import "MoMARootViewController.h"
 #import "HelloWorldViewController.h"
+#import "TableViewController.h"
 
 @interface MoMARootViewController ()
 @property (strong, nonatomic) UIButton *myButton;
@@ -14,6 +15,7 @@
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     [self setUpMyButton];
+    [self setUpTableViewButton];
 }
 
 #pragma mark - actions
@@ -21,6 +23,12 @@
 - (void)myButtonWasTapped {
     HelloWorldViewController *viewController = [[HelloWorldViewController alloc] init];
     viewController.delegate = self;
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+
+- (void)tableViewButtonWasTapped {
+    TableViewController *viewController = [[TableViewController alloc] init];
+    //viewController.delegate = self;
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
@@ -48,8 +56,7 @@
     self.tableViewButton.backgroundColor = [UIColor grayColor];
     [self.tableViewButton setTitle:@"Open Table Form" forState:UIControlStateNormal];
     [self.view addSubview:self.tableViewButton];
-    [self.tableViewButton addTarget:self action: forControlEvents:<#(UIControlEvents)#>]
+    [self.tableViewButton addTarget:self action:@selector(tableViewButtonWasTapped) forControlEvents:UIControlEventTouchUpInside];
 }
-
 
 @end
