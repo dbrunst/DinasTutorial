@@ -5,6 +5,7 @@ using namespace Cedar::Doubles;
 
 @interface TableViewController (Spec)
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UIButton *closeButton;
 @end
 
 SPEC_BEGIN(TableViewControllerSpec)
@@ -20,6 +21,15 @@ describe(@"TableViewController", ^{
         controller.view should_not be_nil;
     });
 
+    describe(@"close button", ^{
+        beforeEach(^{
+            [controller.closeButton tap];
+        });
+        
+        it(@"should inform the delegate", ^{
+            controller.delegate should have_received(@selector(tableViewControllerDidFinish));
+        });
+    });
     describe(@"UITableViewDataSource protocol", ^{
         describe(@"tableView:numberOfRowsInSection:", ^{
             it(@"should return 5", ^{

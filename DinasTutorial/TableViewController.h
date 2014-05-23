@@ -1,6 +1,9 @@
 #import <UIKit/UIKit.h>
 
 @protocol TableViewControllerDelegate <NSObject>
+
+- (void)tableViewControllerDidFinish;
+
 @end
 
 

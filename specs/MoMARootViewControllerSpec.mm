@@ -63,6 +63,20 @@ describe(@"MoMARootViewController", ^{
             });
         });
     });
+    
+    describe(@"TableViewControllerDelegate protocol", ^{
+        describe(@"tableViewControllerDidFinish", ^{
+            beforeEach(^{
+                UIViewController *tableViewController = [[UIViewController alloc] init];
+                [controller presentViewController:tableViewController animated:NO completion:nil];
+                [controller tableViewControllerDidFinish];
+            });
+            
+            it(@"should dismiss tableViewController", ^{
+                controller.presentedViewController should be_nil;
+            });
+        });
+    });
 });
 
 SPEC_END

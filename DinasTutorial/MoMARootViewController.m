@@ -28,13 +28,19 @@
 
 - (void)tableViewButtonWasTapped {
     TableViewController *viewController = [[TableViewController alloc] init];
-    //viewController.delegate = self;
+    viewController.delegate = self;
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
 #pragma mark - HelloWorldViewControllerDelegate protocol
 
 - (void)helloWorldViewControllerDidFinish {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - TableViewControllerDelegate protocol
+
+- (void)tableViewControllerDidFinish {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
